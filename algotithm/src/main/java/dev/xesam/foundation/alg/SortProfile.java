@@ -8,5 +8,5 @@ public abstract class SortProfile {
         return getClass().getSimpleName();
     }
 
-    abstract void run();
+    public abstract void run();
 }

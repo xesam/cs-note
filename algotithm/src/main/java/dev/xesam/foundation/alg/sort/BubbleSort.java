@@ -1,4 +1,6 @@
-package dev.xesam.foundation.alg;
+package dev.xesam.foundation.alg.sort;
+
+import dev.xesam.foundation.alg.*;
 
 /**
  * 冒泡排序
