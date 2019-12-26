@@ -32,7 +32,7 @@ public class SelectSort extends SortProfile implements Sortable {
     }
 
     @Override
-    void run() {
+    public void run() {
         SortUtils.runSort(1000, SelectSort::sortOnce);
     }
 }

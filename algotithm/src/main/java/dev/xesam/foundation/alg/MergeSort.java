@@ -62,7 +62,7 @@ public class MergeSort extends SortProfile implements Sortable {
     }
 
     @Override
-    void run() {
+    public void run() {
         SortUtils.runSort(1000, MergeSort::sortOnce);
     }
 }
