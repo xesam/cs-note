@@ -1,5 +1,7 @@
 package dev.xesam.foundation.alg;
 
+import dev.xesam.foundation.alg.sort.Sorter;
+
 import java.util.function.IntConsumer;
 import java.util.stream.IntStream;
 
@@ -25,5 +27,12 @@ public class SortUtils {
 
     public static void runSort(int count, IntConsumer intConsumer) {
         IntStream.range(0, count).forEach(intConsumer);
+    }
+
+    public static void run(int count, Sorter sorter) {
+        IntStream.range(0, count).forEach(value -> {
+            Integer[] input = Generator.ints(1000);
+            sorter.sort(input);
+        });
     }
 }

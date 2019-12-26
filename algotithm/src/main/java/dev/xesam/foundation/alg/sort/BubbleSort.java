@@ -1,6 +1,6 @@
 package dev.xesam.foundation.alg.sort;
 
-import dev.xesam.foundation.alg.*;
+import dev.xesam.foundation.alg.SortUtils;
 
 /**
  * 冒泡排序
@@ -8,17 +8,7 @@ import dev.xesam.foundation.alg.*;
  * Created by xe on 2014/12/5.
  * xesamguo@gmail.com
  */
-public class BubbleSort extends SortProfile implements Sortable {
-    public static void main(String[] args) {
-        SimpleProfiler.profile(new BubbleSort());
-    }
-
-    public static void sortOnce(int i) {
-        Integer[] input = Generator.ints(1000);
-        BubbleSort sorter = new BubbleSort();
-        sorter.sort(input);
-    }
-
+public class BubbleSort implements Sorter {
     @Override
     public void sort(Integer[] src) {
         int size = src.length;
@@ -29,11 +19,5 @@ public class BubbleSort extends SortProfile implements Sortable {
                 }
             }
         }
-        SortUtils.checkSort(src);
-    }
-
-    @Override
-    public void run() {
-        SortUtils.runSort(1000, BubbleSort::sortOnce);
     }
 }
