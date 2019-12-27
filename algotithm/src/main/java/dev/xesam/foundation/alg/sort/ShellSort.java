@@ -1,18 +1,12 @@
-package dev.xesam.foundation.alg;
+package dev.xesam.foundation.alg.sort;
+
+import dev.xesam.foundation.alg.SortUtils;
+import dev.xesam.foundation.alg.sort.Sorter;
 
 /**
  * Created by xe on 2016/5/6.
  */
-public class ShellSort extends SortProfile implements Sortable {
-    public static void main(String[] args) {
-        SimpleProfiler.profile(new ShellSort());
-    }
-
-    public static void sortOnce(int i) {
-        Integer[] input = Generator.ints(41);
-        ShellSort sorter = new ShellSort();
-        sorter.sort(input);
-    }
+public class ShellSort implements Sorter {
 
     @Override
     public void sort(Integer[] src) {
@@ -38,10 +32,5 @@ public class ShellSort extends SortProfile implements Sortable {
         }
 
         SortUtils.checkSort(src);
-    }
-
-    @Override
-    public void run() {
-        SortUtils.runSort(1, ShellSort::sortOnce);
     }
 }

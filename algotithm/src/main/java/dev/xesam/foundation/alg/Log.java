@@ -1,5 +1,7 @@
 package dev.xesam.foundation.alg;
 
+import java.util.Arrays;
+
 /**
  * Created by xe on 2014/12/5.
  * xesamguo@gmail.com
@@ -11,12 +13,9 @@ public class Log {
     }
 
     public static <T> void print(T[] src) {
-        for (int i = 0; i < src.length; i++) {
-            System.out.print(src[i]);
+        Arrays.asList(src).forEach(value -> {
+            System.out.print(value);
             System.out.print(",");
-            if (i % 10 == 9) {
-                System.out.printf("\n");
-            }
-        }
+        });
     }
 }

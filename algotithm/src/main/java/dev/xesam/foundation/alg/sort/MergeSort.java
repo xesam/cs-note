@@ -1,19 +1,12 @@
-package dev.xesam.foundation.alg;
+package dev.xesam.foundation.alg.sort;
+
+import dev.xesam.foundation.alg.SortUtils;
+import dev.xesam.foundation.alg.sort.Sorter;
 
 /**
  * Created by xe on 15-4-4.
  */
-public class MergeSort extends SortProfile implements Sortable {
-
-    public static void main(String[] args) {
-        SimpleProfiler.profile(new MergeSort());
-    }
-
-    public static void sortOnce(int i) {
-        Integer[] input = Generator.ints(1000);
-        MergeSort sorter = new MergeSort();
-        sorter.sort(input);
-    }
+public class MergeSort implements Sorter {
 
     @Override
     public void sort(Integer[] src) {
@@ -59,10 +52,5 @@ public class MergeSort extends SortProfile implements Sortable {
             src[leftIndex + j] = workspace[j];
             j++;
         }
-    }
-
-    @Override
-    public void run() {
-        SortUtils.runSort(1000, MergeSort::sortOnce);
     }
 }
